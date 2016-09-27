@@ -18,17 +18,19 @@ function tweetIt () {
 
 function getQuote() {
     $.ajax({
-   url: 'http://quotes.rest/qod.json',
+   url: 'https://crossorigin.me/http://quotes.rest/qod.json',
    data: {
       format: 'json'
    },
    error: function() {
       $('#quote').html('<p>An error has occurred</p>');
    },
-   dataType: 'jsonp',
+   dataType: 'json',
    success: function(data) {
-      var $quote = $('<h1>').text(contents.quotes[0].quote);
-      var $author = $('<p>').text(contents.quotes[0].author);
+      var $quote = $('<h1>').text(data.contents.quotes[0].quote);
+      // console.log($quote);
+      var $author = $('<p>').text(data.contents.quotes[0].author);
+      // console.log($author);
       $('#quote')
          .append($quote)
          .append($author);
