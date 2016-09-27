@@ -9,7 +9,7 @@ function start () {
 }
 
 function tweetIt () {
-    alert("tweeting");
+    //alert("tweeting");
 }
 
 // function quoteIt () {
@@ -18,7 +18,7 @@ function tweetIt () {
 
 function getQuote() {
     $.ajax({
-   url: 'https://crossorigin.me/http://quotes.rest/qod.json',
+   url: 'https://crossorigin.me/http://quotes.rest/qod.json', // http://quotes.rest/quote.json
    data: {
       format: 'json'
    },
