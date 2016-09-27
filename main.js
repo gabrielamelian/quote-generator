@@ -32,8 +32,9 @@ function getQuote() {
       var $author = $('<p>').text(data.contents.quotes[0].author);
       // console.log($author);
       $('#quote')
-         .append($quote)
-         .append($author);
+         .replaceWith($quote)
+      $('#author')
+         .replaceWith($author);
    },
    type: 'GET'
 });
