@@ -1,19 +1,20 @@
 document.addEventListener('DOMContentLoaded', start);
 
 function start () {
+    getQuote();
     var tweetQuote = document.getElementById("tweet");
     var newQuote = document.getElementById("newquote");
     tweetQuote.addEventListener("click", tweetIt);
-    newQuote.addEventListener("contextmenu", quoteIt);
+    newQuote.addEventListener("click", getQuote);
 }
 
 function tweetIt () {
     alert("tweeting");
 }
 
-function quoteIt () {
-    alert("I want a new quote!");
-}
+// function quoteIt () {
+//     alert("I want a new quote!");
+// }
 
 function getQuote() {
     $.ajax({
