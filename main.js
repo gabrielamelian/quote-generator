@@ -10,6 +10,7 @@ function start () {
 
 function tweetIt () {
     //alert("tweeting");
+    //<a href="https://twitter.com/share" class="twitter-share-button" data-text="testetetttetet" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 }
 
 // function quoteIt () {
@@ -18,24 +19,29 @@ function tweetIt () {
 
 function getQuote() {
     $.ajax({
-   url: 'https://crossorigin.me/http://quotes.rest/qod.json', // http://quotes.rest/quote.json
-   data: {
-      format: 'json'
-   },
-   error: function() {
-      $('#quote').html('<p>An error has occurred</p>');
-   },
-   dataType: 'json',
-   success: function(data) {
-      var $quote = $('<h1>').text(data.contents.quotes[0].quote);
-      // console.log($quote);
-      var $author = $('<p>').text(data.contents.quotes[0].author);
-      // console.log($author);
-      $('#quote')
-         .replaceWith($quote)
-      $('#author')
-         .replaceWith($author);
-   },
-   type: 'GET'
-});
+       url: 'https://crossorigin.me/http://quotes.rest/qod.json', // http://quotes.rest/quote.json
+       data: {
+          format: 'json'
+       },
+       error: function() {
+          $('#quote').html('<p>An error has occurred</p>');
+       },
+       dataType: 'json',
+       success: function(data) {
+          var $quote = $('<h1>').text(data.contents.quotes[0].quote);
+          // console.log($quote);
+          var $author = $('<p>').text(data.contents.quotes[0].author);
+          // console.log($author);
+          $('#quote')
+             .replaceWith($quote)
+          $('#author')
+             .replaceWith($author);
+       },
+    type: 'GET'
+    });
+    updateTweet();
+}
+
+function updateTweet () {
+
 }
