@@ -10,11 +10,11 @@ body {
   border-color: white;
   background-color: dodgerblue;
   margin: auto;
-  width: 800px;
+  width: 600px;
   padding: 40px;
   height: 200px;
 
-  position:absolute; 
+  position:absolute;
   left:0; right:0;
   top:0; bottom:0;
 
