@@ -9,14 +9,16 @@ function start () {
 }
 
 function tweetIt () {
-    //alert("tweeting");
-    //<a href="https://twitter.com/share" class="twitter-share-button" data-text="testetetttetet" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    //$('#tweet').html('&nbsp;')
+    var quoteText = $('#quote').text();
+    var authorText = $('#author').text();
+    console.log(quoteText);
+    console.log(authorText);
+    // twttr.widgets.load();
+    var tweetContent = '<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=' + quoteText + " - " + authorText + '">Tweet</a>';
+    console.log(tweetContent);
+    $('#tweet').html(tweetContent);
 }
-
-// function quoteIt () {
-//     alert("I want a new quote!");
-// }
-
 
 
 function getQuote() {
@@ -47,9 +49,4 @@ function getQuote() {
       //  xhr.setRequestHeader("X-Mashape-Authorization", "ghJGu8NsJXmsh5TCrhXPVgc4baHSp18CnHPjsng2ZnXWLXGsx0");
     // type: 'GET'
     });
-    // updateTweet();
-}
-
-function updateTweet () {
-
 }
