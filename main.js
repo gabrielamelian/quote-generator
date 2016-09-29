@@ -17,9 +17,11 @@ function tweetIt () {
 //     alert("I want a new quote!");
 // }
 
+
+
 function getQuote() {
     $.ajax({
-       url: 'https://crossorigin.me/http://quotes.rest/qod.json', // http://quotes.rest/quote.json
+       url: 'https://andruxnet-random-famous-quotes.p.mashape.com/',
        data: {
           format: 'json'
        },
@@ -28,16 +30,22 @@ function getQuote() {
        },
        dataType: 'json',
        success: function(data) {
-          var $quote = $('<h1>').text(data.contents.quotes[0].quote);
-          // console.log($quote);
-          var $author = $('<p>').text(data.contents.quotes[0].author);
-          // console.log($author);
+          var returnQuote = data;
+          console.log(returnQuote);
+          var $quote = $('<h1>').text(returnQuote.quote);
+          console.log($quote);
+          var $author = $('<p>').text(returnQuote.author);
+          console.log($author);
           $('#quote')
              .replaceWith($quote)
           $('#author')
              .replaceWith($author);
        },
-    type: 'GET'
+       beforeSend: function(xhr) {
+          xhr.setRequestHeader("X-Mashape-Authorization", "ghJGu8NsJXmsh5TCrhXPVgc4baHSp18CnHPjsng2ZnXWLXGsx0"); // Enter here your Mashape key
+       }
+      //  xhr.setRequestHeader("X-Mashape-Authorization", "ghJGu8NsJXmsh5TCrhXPVgc4baHSp18CnHPjsng2ZnXWLXGsx0");
+    // type: 'GET'
     });
     updateTweet();
 }
