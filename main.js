@@ -32,9 +32,9 @@ function getQuote() {
        success: function(data) {
           var returnQuote = data;
           console.log(returnQuote);
-          var $quote = $('<h1>').text(returnQuote.quote);
+          var $quote = $('<h1 id="quote">').text(returnQuote.quote);
           console.log($quote);
-          var $author = $('<p>').text(returnQuote.author);
+          var $author = $('<p id="author">').text(returnQuote.author);
           console.log($author);
           $('#quote')
              .replaceWith($quote)
@@ -47,7 +47,7 @@ function getQuote() {
       //  xhr.setRequestHeader("X-Mashape-Authorization", "ghJGu8NsJXmsh5TCrhXPVgc4baHSp18CnHPjsng2ZnXWLXGsx0");
     // type: 'GET'
     });
-    updateTweet();
+    // updateTweet();
 }
 
 function updateTweet () {
