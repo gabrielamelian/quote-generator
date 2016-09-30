@@ -11,10 +11,7 @@ function start () {
 function tweetIt () {
     var quoteText = $('#quote').text();
     var authorText = $('#author').text();
-    var tweetContent = '<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(quoteText) + " - " + encodeURIComponent(authorText) + '">Tweet</a>';
-    //console.log(tweetContent);
     window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(quoteText) + " - " + encodeURIComponent(authorText));
-    //$('#tweet').html(tweetContent);
 }
 
 
@@ -33,7 +30,7 @@ function getQuote() {
           var $quote = $('<h1 id="quote">').text(returnQuote.quote);
           var $author = $('<p id="author">').text(returnQuote.author);
           $('#quote')
-             .replaceWith($quote)
+             .replaceWith($quote);
           $('#author')
              .replaceWith($author);
        },
