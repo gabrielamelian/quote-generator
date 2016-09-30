@@ -11,9 +11,7 @@ function start () {
 function tweetIt () {
     var quoteText = $('#quote').text();
     var authorText = $('#author').text();
-    console.log(quoteText);
-    console.log(authorText);
-    var tweetContent = '<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=' + quoteText + " - " + authorText + '">Tweet</a>';
+    var tweetContent = '<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(quoteText) + " - " + encodeURIComponent(authorText) + '">Tweet</a>';
     console.log(tweetContent);
     $('#tweet').html(tweetContent);
 }
